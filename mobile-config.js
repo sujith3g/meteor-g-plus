@@ -1,5 +1,5 @@
 App.info({
-  id: 'com.example.meteor.gplus',
+  id: 'com.vcompile.torrentz',
   name: 'meteor-g-plus',
   description: 'Metor Google Plus Login Example',
   author: 'Sujith G',

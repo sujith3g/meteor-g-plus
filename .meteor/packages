@@ -7,3 +7,9 @@
 meteor-platform
 autopublish
 insecure
+
+accounts-base
+accounts-google
+accounts-password
+
+momentjs:moment
