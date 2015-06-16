@@ -8,7 +8,7 @@ Template.googleSignIn.rendered = function() {
 
 Template.googleSignIn.events({
     'click #g-plus': function() {
-        console.log("googleSignIn button clicked");
+        alert("googleSignIn button clicked");
 
         if (Meteor.isCordova) { // signIn through cordova
             Meteor.cordova_g_plus({

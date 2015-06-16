@@ -13,12 +13,11 @@ Package.onUse(function(api) {
     api.versionsFrom("METEOR@1.0");
 
     api.use([
-        "accounts-base",
-        "accounts-password"
-    ], ["web.cordova", "server"]);
+        "accounts-base"
+    ], ["client", "server"]);
     api.use(["http"], ["server"]);
 
-    api.imply(["accounts-base", "accounts-password"], ["web.cordova", "server"]);
+    api.imply(["accounts-base"], ["client", "server"]);
 
     api.add_files([
         "server/cordova_g_plus.js"
