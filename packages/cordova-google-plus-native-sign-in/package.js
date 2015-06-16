@@ -15,10 +15,10 @@ Package.onUse(function(api) {
     api.use([
         "accounts-base",
         "accounts-password"
-    ], ["client", "server"]);
-
-    api.imply(["accounts-base", "accounts-password"], ["client", "server"]);
+    ], ["web.cordova", "server"]);
     api.use(["http"], ["server"]);
+
+    api.imply(["accounts-base", "accounts-password"], ["web.cordova", "server"]);
 
     api.add_files([
         "server/cordova_g_plus.js"
