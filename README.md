@@ -24,3 +24,28 @@ Coming soon.
   ```
   
 4.  Now use the App ID created in step-3 to [Setup Google Plus API](https://developers.google.com/+/mobile/android/samples/quickstart-android) for android.
+5. Now in your client side code  you can use `Meteor.cordova_g_plus({cordova_g_plus: true});`  as shown
+
+```javascript
+Template.googleSignIn.events({
+    'click #g-plus': function() {
+    // Use Meteor.cordova_g_plus({cordova_g_plus: true}); 
+    // inside if (Meteor.isCordova) {} block
+        if (Meteor.isCordova) { // signIn through cordova
+            Meteor.cordova_g_plus({
+                cordova_g_plus: true
+            });
+        } else { // signIn through browser
+            if (Accounts.loginServicesConfigured()) {
+                Meteor.loginWithGoogle({
+                    requestOfflineToken: true,
+                    requestPermissions: ["email", "profile"]
+                }, function(error) {
+                    if (error) alert(error);
+                    // else location.reload();
+                });
+            }
+        }
+    }
+});
+```
