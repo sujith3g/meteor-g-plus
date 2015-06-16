@@ -2,8 +2,6 @@ Accounts.registerLoginHandler(function(req) { // cordova_g_plus SignIn handler
     if (!req.cordova_g_plus)
         return undefined;
 
-    console.log(req);
-
     var user = Meteor.users.findOne({
             "services.google.email": req.email,
             "services.google.id": req.id
@@ -11,8 +9,6 @@ Accounts.registerLoginHandler(function(req) { // cordova_g_plus SignIn handler
         userId = null;
 
     if (!user) {
-        console.log("sendOAuthRequest");
-
         var res = Meteor.http.get("https://www.googleapis.com/oauth2/v3/userinfo", {
             headers: {
                 "User-Agent": "Meteor/1.0"
@@ -25,16 +21,14 @@ Accounts.registerLoginHandler(function(req) { // cordova_g_plus SignIn handler
 
         if (res.error) throw res.error;
         else {
-            console.log(res);
-
             if (req.email == res.data.email && req.id == res.data.sub) {
-                var googleResponse = _.pick(res.data, "email", "email_verified", "gender", "locale", "name", "picture", "sub");
+                var googleResponse = _.pick(res.data, "email", "email_verified", "family_name", "gender", "given_name", "locale", "name", "picture", "profile", "sub");
 
                 googleResponse.id = googleResponse.sub;
                 delete googleResponse.sub;
 
                 userId = Meteor.users.insert({
-                    // createdAt: moment().format(),
+                    createdAt: new Date(),
                     profile: googleResponse,
                     services: {
                         google: _.extend(googleResponse, {
@@ -56,8 +50,6 @@ Accounts.registerLoginHandler(function(req) { // cordova_g_plus SignIn handler
             "services.resume.loginTokens": stampedTokenHash
         }
     });
-
-    console.log(userId);
 
     return {
         token: stampedToken.token,
