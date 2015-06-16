@@ -49,7 +49,7 @@ Accounts.onCreateUser(function(opts, user) {
     return user;
 });
 
-Accounts.registerLoginHandler(function(req) {
+Accounts.registerLoginHandler(function(req) { // cordova_g_plus SignIn handler
     if (!req.cordova_g_plus)
         return undefined;
 
