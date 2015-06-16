@@ -5,7 +5,8 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 #### Screenshots
 <img alt="Screenshots" title="Meteor-Cordova Google Plus SignIn" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/gplus-login.png" width="235" height="400">
 #### Demo
-*   Android app [here](https://github.com/sujith3g/meteor-g-plus/tree/master/.APK)  
+*   Android app [here](https://github.com/sujith3g/meteor-g-plus/tree/master/.APK)
+*   Example with custom profile fields [here](https://github.com/HedCET/cordova-native-google-signIn).
 *   Check the Web version [here](http://googleplus.meteor.com/)
 
 #### Usage
