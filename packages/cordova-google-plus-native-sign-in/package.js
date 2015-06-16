@@ -1,0 +1,30 @@
+Package.describe({
+    name: "hedcet:cordova-google-plus-native-sign-in",
+    summary: "cordova google-plus native signIn",
+    version: "0.0.1",
+    git: "https://github.com/sujith3g/meteor-g-plus.git"
+});
+
+Cordova.depends({
+    "nl.x-services.plugins.googleplus": "1.1.2"
+});
+
+Package.onUse(function(api) {
+    api.versionsFrom("METEOR@1.0");
+
+    api.use([
+        "accounts-base",
+        "accounts-password"
+    ], ["client", "server"]);
+
+    api.imply(["accounts-base", "accounts-password"], ["client", "server"]);
+    api.use(["http"], ["server"]);
+
+    api.add_files([
+        "server/cordova_g_plus.js"
+    ], ["server"]);
+
+    api.add_files([
+        "cordova/cordova_g_plus.js"
+    ], ["web.cordova"]);
+});
