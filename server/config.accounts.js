@@ -1,13 +1,64 @@
+var google = {
+    clientId: "81242494817-38ohse21enq5ibpe65155qp82lr6h7e7.apps.googleusercontent.com",
+    clientSecret: "SXV_5gjOLtwhoCnYE_2oh9Et"
+};
+
+Meteor.startup(function() {
+
+    Accounts.loginServiceConfiguration.remove({
+        service: "google"
+    });
+
+    Accounts.loginServiceConfiguration.insert({
+        service: "google",
+        clientId: google.clientId,
+        secret: google.clientSecret
+    });
+
+});
+
+Accounts.config({
+    // forbidClientAccountCreation: true,
+    loginExpirationInDays: 0,
+    // restrictCreationByEmailDomain: function(emailId) {
+    //     var domainAllowed = ["tinymail.in"];
+    //     var domain = emailId.slice(emailId.lastIndexOf("@") + 1);
+    //     return _.contains(domainAllowed, domain);
+    // },
+    // sendVerificationEmail: true
+});
+
+Accounts.onCreateUser(function(opts, user) {
+    var res = Meteor.http.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+        headers: {
+            "User-Agent": "Meteor/1.0"
+        },
+
+        params: {
+            access_token: user.services.google.accessToken
+        }
+    });
+
+    if (res.error)
+        throw res.error;
+
+    user.profile = _.extend(_.pick(res.data, "email", "email_verified", "gender", "locale", "name", "picture", "sub"), {
+        time: moment().format()
+    });
+
+    return user;
+});
+
 Accounts.registerLoginHandler(function(req) {
     if (!req.cordova_g_plus)
         return undefined;
-    console.log(req);
+
     var user = Meteor.users.findOne({
             "services.google.email": req.email,
             "services.google.id": req.id
         }),
         userId = null;
-    console.log(user, userId);
+
     if (!user) {
         var res = Meteor.http.get("https://www.googleapis.com/oauth2/v3/userinfo", {
             headers: {
@@ -18,7 +69,7 @@ Accounts.registerLoginHandler(function(req) {
                 access_token: req.oAuthToken
             }
         });
-        console.log(res);
+
         if (res.error) throw res.error;
         else {
             if (req.email == res.data.email && req.id == res.data.sub) {
@@ -36,10 +87,10 @@ Accounts.registerLoginHandler(function(req) {
                         })
                     }
                 });
-            } else throw "AccessToken MISMATCH";
+            } else throw new Meteor.Error(422, "AccessToken MISMATCH");
         }
     } else userId = user._id;
-    console.log(userId);
+
     var stampedToken = Accounts._generateStampedLoginToken();
     var stampedTokenHash = Accounts._hashStampedToken(stampedToken);
 
@@ -50,9 +101,9 @@ Accounts.registerLoginHandler(function(req) {
             "services.resume.loginTokens": stampedTokenHash
         }
     });
-    console.log(stampedTokenHash);
+
     return {
-        userId: userId,
-        token: stampedToken.token
+        token: stampedToken.token,
+        userId: userId
     };
 });

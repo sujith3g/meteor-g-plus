@@ -1,8 +1,7 @@
 App.info({
-  id: 'com.vcompile.torrentz',
-  name: 'meteor-g-plus',
-  description: 'Metor Google Plus Login Example',
-  author: 'Sujith G',
-  email: 'sujith3g@gmail.com',
-  website: 'http://github.com/sujith3g'
+    id: 'com.hedcet.meteor',
+    name: 'cordovaGoogleSignIn',
+    description: 'Cordova Google Plus SignIn',
+    version: "0.0.1",
+    author: 'HedCET'
 });
