@@ -23,4 +23,4 @@ Coming soon.
 });
   ```
   
-4.  Now use the App ID created in step-3 to [Setup Google Plus API](https://developers.google.com/+/mobile/android/samples/quickstart-android).
+4.  Now use the App ID created in step-3 to [Setup Google Plus API](https://developers.google.com/+/mobile/android/samples/quickstart-android) for android.
