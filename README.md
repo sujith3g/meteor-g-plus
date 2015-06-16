@@ -1,7 +1,7 @@
 # Cordova Google Plus native Login implemented in MeteorJS
 #### Description
 
-This is an example Meteor-Android App with native Google Plus Login using [`cordova-google-plus-native-sign-in`](https://atmospherejs.com/hedcet/cordova-google-plus-native-sign-in) meteor package.
+This is an example Meteor-Android App with native Google Plus Login using [`hedcet:cordova-google-plus-native-sign-in`](https://atmospherejs.com/hedcet/cordova-google-plus-native-sign-in) meteor package.
 #### Screenshots
 Coming soon.
 #### Demo
