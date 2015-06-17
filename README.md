@@ -24,7 +24,7 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
     author: 'HedCET'
 });
   ``` 
-4.  Now use the App ID created in step-3 to Setup Google Plus API for android by following step-1 of [this guide](https://developers.google.com/+/mobile/android/samples/quickstart-android).
+4.  Now use the App ID created in step-3 to Setup Google Plus API for android by following only step-1 of [this guide](https://developers.google.com/+/mobile/android/samples/quickstart-android).
 5.  Now in your client side code  you can use `Meteor.cordova_g_plus({cordova_g_plus: true});` as shown
 
 ```javascript
