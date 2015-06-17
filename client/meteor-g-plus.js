@@ -12,7 +12,8 @@ Template.googleSignIn.events({
 
         if (Meteor.isCordova) { // signIn through cordova
             Meteor.cordova_g_plus({
-                cordova_g_plus: true
+                cordova_g_plus: true,
+                profile: ["email", "email_verified", "gender", "locale", "name", "picture"] // customized Meteor.user() pfofile
             });
         } else { // signIn through browser
             if (Accounts.loginServicesConfigured()) {
@@ -25,5 +26,9 @@ Template.googleSignIn.events({
                 });
             }
         }
+    },
+
+    "click #sign-out": function() {
+        Meteor.logout();
     }
 });

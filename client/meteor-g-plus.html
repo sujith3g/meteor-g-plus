@@ -7,8 +7,13 @@
 </body>
 
 <template name="googleSignIn">
-	<br>
-	<br>
-	<br>
-    <center><i class="fa fa-google-plus" style="color:red;"> <button id="g-plus">SignIn with Google Plus</button></i></center>
+    <!-- signIn -->
+
+    {{#unless currentUser}}
+    <center><i class="fa fa-google-plus" style="color: red; margin: 25% auto;"><button id="g-plus">SignIn with Google Plus</button></i></center>{{/unless}}
+
+    <!-- signOut -->
+
+    {{#if currentUser}}
+    <center><i class="fa fa-sign-out" style="color: red; margin: 25% auto;"><button id="sign-out">SignOut</button></i></center>{{/if}}
 </template>

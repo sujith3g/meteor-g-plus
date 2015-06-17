@@ -10,5 +10,5 @@ accounts-base
 accounts-google
 accounts-password
 
-linto:fontawesome
 hedcet:cordova-google-plus-native-sign-in
+linto:fontawesome
