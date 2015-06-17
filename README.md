@@ -33,15 +33,5 @@ if (Meteor.isCordova) { // signIn through cordova
         cordova_g_plus: true,
         profile: ["email", "email_verified", "gender", "locale", "name", "picture"] // customized Meteor.user() pfofile
     });
-} else { // signIn through browser
-    if (Accounts.loginServicesConfigured()) {
-        Meteor.loginWithGoogle({
-            requestOfflineToken: true,
-            requestPermissions: ["email", "profile"]
-        }, function(error) {
-            if (error) alert(error);
-            // else location.reload();
-        });
-    }
 }
 ```
