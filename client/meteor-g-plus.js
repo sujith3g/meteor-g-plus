@@ -13,7 +13,7 @@ Template.googleSignIn.events({
         if (Meteor.isCordova) { // signIn through cordova
             Meteor.cordova_g_plus({
                 cordova_g_plus: true,
-                profile: ["email", "email_verified", "gender", "locale", "name", "picture"] // customized Meteor.user() pfofile
+                profile: ["email", "email_verified", "gender", "locale", "name", "picture"] // customized Meteor.user() pfofile ["email", "email_verified", "family_name", "gender", "given_name", "locale", "name", "picture", "profile", "sub"]
             });
         } else { // signIn through browser
             if (Accounts.loginServicesConfigured()) {
