@@ -38,6 +38,26 @@ if (Meteor.isCordova) { // signIn through cordova
                 //error handling code
                 alert(error);
             }
-     });
+    });
 }
+```
+#####Logout
+ 
+ ```javascript
+ window.plugins.googleplus.logout(
+     function(msg) {
+         Meteor.logout();
+         alert(msg); // do something useful instead of alerting
+     }
+ );
+ 
+ ```
+#####Disconnect
+
+```javascript
+window.plugins.googleplus.disconnect(
+   function(msg) {
+       alert(msg); // do something useful instead of alerting
+   }
+ );
 ```
