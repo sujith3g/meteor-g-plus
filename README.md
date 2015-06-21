@@ -9,6 +9,7 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 #### Demo
 *   Android App [here](https://github.com/sujith3g/meteor-g-plus/tree/master/.APK).
 *   Check it's web version [here](http://googleplus.meteor.com).
+*   Another [example](https://play.google.com/store/apps/details?id=com.vcompile.torrentz).
 
 #### Usage
 1.  Add android platform to your app `meteor add-platform android`. You can follow [this](https://github.com/meteor/meteor/wiki/Meteor-Cordova-Phonegap-integration) Documentation.
