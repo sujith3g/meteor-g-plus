@@ -14,6 +14,9 @@ Template.googleSignIn.events({
             Meteor.cordova_g_plus({
                 cordova_g_plus: true,
                 profile: ["email", "email_verified", "gender", "locale", "name", "picture"] // customized Meteor.user() pfofile ["email", "email_verified", "family_name", "gender", "given_name", "locale", "name", "picture", "profile", "sub"]
+            }, function(error) {
+                if (error) alert(error);
+                // else location.reload();
             });
         } else { // signIn through browser
             if (Accounts.loginServicesConfigured()) {
@@ -29,6 +32,20 @@ Template.googleSignIn.events({
     },
 
     "click #sign-out": function() {
-        Meteor.logout();
+        window.plugins.googleplus.logout(
+            function(msg) {
+                Meteor.logout();
+
+                alert(msg); // alert msg
+            }
+        );
+    },
+
+    "click #disconnect": function() {
+        window.plugins.googleplus.disconnect(
+            function(msg) {
+                alert(msg); // alert msg
+            }
+        );
     }
 });
