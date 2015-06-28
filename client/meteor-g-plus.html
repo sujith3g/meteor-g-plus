@@ -18,6 +18,8 @@
     <center style="margin: 25% auto;">
         <i class="fa fa-sign-out" style="color: red;"><button id="sign-out">SignOut</button></i>
         <br>
+        {{#if isCordova}}
         <i class="fa fa-chain-broken" style="color: red;"><button id="disconnect">Disconnect Google Plus</button></i>
+        {{/if}}
     </center>{{/if}}
 </template>

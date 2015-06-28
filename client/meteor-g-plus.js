@@ -5,7 +5,11 @@ Template.googleSignIn.rendered = function() {
         }
     });
 };
-
+Template.googleSignIn.helpers({
+  isCordova:function(){
+    return Meteor.isCordova;
+  }
+})
 Template.googleSignIn.events({
     'click #g-plus': function() {
         alert("googleSignIn button clicked");
@@ -32,6 +36,7 @@ Template.googleSignIn.events({
     },
 
     "click #sign-out": function() {
+      if(Meteor.isCordova){
         window.plugins.googleplus.logout(
             function(msg) {
                 Meteor.logout();
@@ -39,9 +44,13 @@ Template.googleSignIn.events({
                 alert(msg); // alert msg
             }
         );
+      }else{
+        Meteor.logout();
+      }
     },
 
     "click #disconnect": function() {
+
         window.plugins.googleplus.disconnect(
             function(msg) {
                 alert(msg); // alert msg
