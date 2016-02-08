@@ -29,7 +29,7 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 
  Make sure you execute the `keytool` steps as well or authentication will fail.
 
-5. You have to create oauth credential for web-Application in the same project(in google-dev-console created in step 4) for `accounts-google` package. Use the `client ID`, `client Secret` from web-client credentials for `accounts-google` like [this](https://github.com/sujith3g/meteor-g-plus/blob/master/server/config.accounts.js#L14).
+5. Create oauth credential for web-Application in the same project(in google-dev-console created in step 4) for `accounts-google` package. Use the `client ID`, `client Secret` from web-client credentials for `accounts-google` like [this](https://github.com/sujith3g/meteor-g-plus/blob/master/server/config.accounts.js#L14).
 
 <img alt="Screenshots" title="google-dev-console" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/credential.png" width="700" height="335">
 
