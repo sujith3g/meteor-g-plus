@@ -41,7 +41,8 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 if (Meteor.isCordova) { // signIn through cordova
     Meteor.cordova_g_plus({
         cordova_g_plus: true,
-        profile: ["email", "email_verified", "gender", "locale", "name", "picture"]
+        profile: ["email", "email_verified", "gender", "locale", "name", "picture"],
+        webClientId: 'your-web-client-id'
       }, function(error) {
             if (error) {
                 //error handling code
