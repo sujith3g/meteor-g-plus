@@ -10,7 +10,7 @@ accounts-google
 accounts-password
 
 linto:fontawesome
-hedcet:cordova-google-plus-native-sign-in
+hedcet:cordova-google-plus-native-sign-in@1.1.3
 standard-minifiers
 meteor-base
 mobile-experience
