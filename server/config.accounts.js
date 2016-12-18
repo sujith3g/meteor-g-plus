@@ -2,8 +2,8 @@ var google = {
     // Use OAuth Credentials of web application/client here, for oauth from web browser.
     // You have to create oAuth credentials for webclient from Google dev console.
     // see https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/create.png
-    clientId: "81242494817-38ohse21enq5ibpe65155qp82lr6h7e7.apps.googleusercontent.com",
-    clientSecret: "SXV_5gjOLtwhoCnYE_2oh9Et"
+    clientId: "767912667782-bonpfuqdmu5jmn1bp1a8bgg6mdcorgc5.apps.googleusercontent.com",
+    clientSecret: "pOnK8xBXB3zRDNGn3hyjrkxH"
 };
 
 Meteor.startup(function() {
@@ -45,7 +45,7 @@ Accounts.onCreateUser(function(opts, user) {
     if (res.error)
         throw res.error;
 
-    user.profile = _.pick(res.data, "email", "email_verified", "gender", "locale", "name", "picture", "sub");
+    user.profile = _.pick(res.data, "email", "email_verified", "family_name", "gender", "given_name", "locale", "picture", "sub");
 
     return user;
 });
