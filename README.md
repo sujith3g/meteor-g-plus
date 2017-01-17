@@ -1,4 +1,6 @@
-# Cordova Google Plus native Login implemented in MeteorJS [![Donate](https://img.shields.io/gratipay/sujith3g.svg)](https://gratipay.com/cordova-google-plus-native-sign-in/) [![ghit.me](https://ghit.me/badge.svg?repo=sujith3g/meteor-g-plus)](https://ghit.me/repo/sujith3g/meteor-g-plus)
+# Cordova Google Plus native Login implemented in MeteorJS
+
+[![Donate](https://img.shields.io/gratipay/sujith3g.svg)](https://gratipay.com/cordova-google-plus-native-sign-in/) [![ghit.me](https://ghit.me/badge.svg?repo=sujith3g/meteor-g-plus)](https://ghit.me/repo/sujith3g/meteor-g-plus)
 
 #### Description
 This is an example Meteor-Android App with native Google Plus Login using [`hedcet:cordova-google-plus-native-sign-in`](https://atmospherejs.com/hedcet/cordova-google-plus-native-sign-in) meteor package.
@@ -7,9 +9,7 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 <img alt="Screenshots" title="Meteor-Cordova Google Plus SignIn" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/gplus-login.png" width="235" height="400">
 
 #### Demo
-*   Android App [here](https://github.com/sujith3g/meteor-g-plus/tree/master/.APK).
-*   Check it's web version [here](http://googleplus.meteor.com).
-*   Another [example](https://play.google.com/store/apps/details?id=online.linto.torrentz).
+*   Android [example](https://play.google.com/store/apps/details?id=online.linto.torrentz).
 
 #### Usage
 1.  Add android platform to your app `meteor add-platform android`. You can follow [this](https://github.com/meteor/meteor/wiki/Meteor-Cordova-integration) Documentation.
