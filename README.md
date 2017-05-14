@@ -35,7 +35,7 @@ This is an example Meteor-Android App with native Google Plus Login using [`hedc
 
 6.  Now in your client side code  you can use `Meteor.cordova_g_plus({cordova_g_plus: true});` as shown
 
-#####LogIn
+##### LogIn
 
 ```javascript
 if (Meteor.isCordova) { // signIn through cordova
@@ -51,7 +51,7 @@ if (Meteor.isCordova) { // signIn through cordova
     });
 }
 ```
-#####Logout
+##### Logout
  
  ```javascript
  window.plugins.googleplus.logout(
@@ -62,7 +62,7 @@ if (Meteor.isCordova) { // signIn through cordova
  );
  
  ```
-#####Disconnect
+##### Disconnect
 
 ```javascript
 window.plugins.googleplus.disconnect(
