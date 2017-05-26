@@ -10,7 +10,7 @@ accounts-google@1.2.0
 accounts-password@1.3.6
 
 linto:fontawesome
-hedcet:cordova-google-plus-native-sign-in@1.1.3
+hedcet:cordova-google-plus-native-sign-in@1.1.4
 meteor-base@1.0.4
 mobile-experience@1.0.4
 mongo@1.1.17
