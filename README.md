@@ -8,7 +8,7 @@ This is an example Meteor Android App with native Google Plus Login using [`hedc
 
 #### Screenshots
 
-<img alt="Screenshots" title="Meteor-Cordova Google Plus SignIn" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/gplus-login.png" width="200" height="400">
+<img alt="Screenshots" title="Meteor-Cordova Google Plus SignIn" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/gplus-login.png" width="256" height="480">
 
 #### Demo
 
@@ -20,26 +20,26 @@ This is an example Meteor Android App with native Google Plus Login using [`hedc
 
 2. Install `hedcet:cordova-google-plus-native-sign-in` package to your App by typing `meteor add hedcet:cordova-google-plus-native-sign-in`.
 
-3. Add `mobile-config.js` file to your App & specify an App ID like `com.example.meteor-g-plus`
+3. Add `mobile-config.js` file to your App & specify an App ID like `com.example.meteor_g_plus`
  
   ```javascript
   App.info({
     author: 'x',
     description: 'Cordova Google Plus SignIn',
     email: 'x',
-    id: 'com.example.meteor-g-plus',
-    name: 'com.example.meteor-g-plus',
+    id: 'com.example.meteor_g_plus',
+    name: 'example',
     website: 'https://github.com/x/x',
     version: '1.0.0',
 });
   ``` 
-4. Now use the App ID(`com.example.meteor-g-plus`) created in step-3 as "Android package name" to setup Google Plus API for Android by following [this guide](https://developers.google.com/mobile/add?platform=Android). Once Google Sign-In is enabled Google will automatically create necessary credentials in Developer Console. There is no need to add the generated google-services.json file into your meteor project.
+4. Now use the App ID(`com.example.meteor_g_plus`) created in step-3 as "Android package name" to setup Google Plus API for Android by following [this guide](https://developers.google.com/mobile/add?platform=Android). Once Google Sign-In is enabled Google will automatically create necessary credentials in Developer Console. There is no need to add the generated google-services.json file into your meteor project.
 
  Make sure you execute the `keytool` steps as well or authentication will fail.
 
 5. Create oAuth credential for web-Application in the same project(in google-dev-console created in step 4) for `accounts-google` package. Use the `client ID`, `client Secret` from web-client credentials for `accounts-google` like [this](https://github.com/sujith3g/meteor-g-plus/blob/master/server/config.accounts.js#L14).
 
-<img alt="Screenshots" title="google-dev-console" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/oauth_client.png" width="800" height="600">
+<img alt="Screenshots" title="google-dev-console" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/oauth_client.png" width="756" height="512">
 
 6. Now in your client side code you can use `Meteor.cordova_g_plus({cordova_g_plus: true});` as shown
 
