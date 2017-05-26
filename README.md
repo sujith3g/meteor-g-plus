@@ -39,7 +39,7 @@ This is an example Meteor Android App with native Google Plus Login using [`hedc
 
 5. Create oAuth credential for web-Application in the same project(in google-dev-console created in step 4) for `accounts-google` package. Use the `client ID`, `client Secret` from web-client credentials for `accounts-google` like [this](https://github.com/sujith3g/meteor-g-plus/blob/master/server/config.accounts.js#L14).
 
-<img alt="Screenshots" title="google-dev-console" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/oauth_client.png" width="756" height="512">
+<img alt="Screenshots" title="google-dev-console" src="https://github.com/sujith3g/meteor-g-plus/blob/master/public/screnshots/oauth_client.png" width="756" height="448">
 
 6. Now in your client side code you can use `Meteor.cordova_g_plus({cordova_g_plus: true});` as shown
 
