@@ -1,61 +1,59 @@
-Template.googleSignIn.rendered = function() {
-    Meteor.autorun(function() {
+Template.googleSignIn.rendered = () => {
+    Tracker.autorun(() => {
         if (Meteor.user()) {
             alert(JSON.stringify(Meteor.user()));
         }
     });
 };
+
 Template.googleSignIn.helpers({
-  isCordova:function(){
-    return Meteor.isCordova;
-  }
+    isCordova() {
+        return Meteor.isCordova;
+    }
 })
+
 Template.googleSignIn.events({
-    'click #g-plus': function() {
-        alert("googleSignIn button clicked");
+    'click #g-plus'() {
+        alert('google SignIn button clicked');
 
         if (Meteor.isCordova) { // signIn through cordova
             Meteor.cordova_g_plus({
+
                 cordova_g_plus: true,
-                profile: ["email", "email_verified", "family_name", "gender", "given_name", "locale", "picture"], // customized Meteor.user() pfofile ["email", "email_verified", "family_name", "gender", "given_name", "locale", "name", "picture", "profile", "sub"]
-                webClientId: '767912667782-bonpfuqdmu5jmn1bp1a8bgg6mdcorgc5.apps.googleusercontent.com'
-            }, function(error) {
+                webClientId: '767912667782-bonpfuqdmu5jmn1bp1a8bgg6mdcorgc5.apps.googleusercontent.com',
+
+                profile: ['email', 'email_verified', 'family_name', 'gender', 'given_name', 'locale', 'name', 'picture', 'profile', 'sub'],
+
+            }, (error) => {
                 if (error) alert(error);
-                // else location.reload();
             });
         } else { // signIn through browser
             if (Accounts.loginServicesConfigured()) {
                 Meteor.loginWithGoogle({
+
                     requestOfflineToken: true,
-                    requestPermissions: ["email", "profile"]
-                }, function(error) {
+                    requestPermissions: ['email', 'profile'],
+
+                }, (error) => {
                     if (error) alert(error);
-                    // else location.reload();
                 });
             }
         }
     },
 
-    "click #sign-out": function() {
-      if(Meteor.isCordova){
-        window.plugins.googleplus.logout(
-            function(msg) {
-                Meteor.logout();
+    'click #sign-out'() {
+        alert('Meteor SignOut button clicked');
 
-                alert(msg); // alert msg
-            }
-        );
-      }else{
-        Meteor.logout();
-      }
+        Meteor.logout((error) => {
+            if (error) alert(error);
+        });
     },
 
-    "click #disconnect": function() {
+    'click #disconnect'() {
+        alert('google disconnect button clicked');
 
-        window.plugins.googleplus.disconnect(
-            function(msg) {
-                alert(msg); // alert msg
-            }
-        );
+        window.plugins.googleplus.disconnect((error) => {
+            if (error) alert(error);
+        });
     }
 });

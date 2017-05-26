@@ -7,19 +7,25 @@
 </body>
 
 <template name="googleSignIn">
+
     <!-- signIn -->
 
     {{#unless currentUser}}
-    <center><i class="fa fa-google-plus" style="color: red; margin: 25% auto;"><button id="g-plus">SignIn with Google Plus</button></i></center>{{/unless}}
+    <center><button id="g-plus">SignIn with Google Plus</button></center>
+    {{/unless}}
 
     <!-- signOut -->
 
     {{#if currentUser}}
-    <center style="margin: 25% auto;">
-        <i class="fa fa-sign-out" style="color: red;"><button id="sign-out">SignOut</button></i>
-        <br>
+    <center>
+
+        <button id="sign-out">SignOut</button>
+
         {{#if isCordova}}
-        <i class="fa fa-chain-broken" style="color: red;"><button id="disconnect">Disconnect Google Plus</button></i>
+        <button id="disconnect">Disconnect Google Plus</button>
         {{/if}}
-    </center>{{/if}}
+
+    </center>
+    {{/if}}
+
 </template>
