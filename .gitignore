@@ -1,1 +1,5 @@
+packages
+node_modules/
 .DS_Store
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]

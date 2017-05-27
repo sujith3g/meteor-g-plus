@@ -5,9 +5,9 @@ App.info({
     author: 'x',
     description: 'Cordova Google Plus SignIn',
     email: 'x',
-    id: 'com.example.meteor_g_plus',
+    id: 'com.hedcet.meteor',
     name: 'example',
-    website: 'https://github.com/x/x',
+    website: 'https://github.com/sujith3g/meteor-g-plus',
     version: '1.0.0',
 });
 

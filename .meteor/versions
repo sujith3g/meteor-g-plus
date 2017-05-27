@@ -29,11 +29,12 @@ ecmascript-runtime-client@0.4.0
 ecmascript-runtime-server@0.4.0
 ejson@1.0.13
 email@1.2.1
+es5-shim@4.6.15
 fastclick@1.0.13
 geojson-utils@1.0.10
 google-config-ui@1.0.0
 google-oauth@1.2.4
-hedcet:cordova-google-plus-native-sign-in@1.1.4
+hedcet:cordova-google-plus-native-sign-in@1.1.5
 hot-code-push@1.0.4
 html-tools@1.0.11
 htmljs@1.0.11
@@ -65,7 +66,6 @@ ordered-dict@1.0.9
 promise@0.8.8
 random@1.0.10
 rate-limit@1.0.8
-reactive-dict@1.1.8
 reactive-var@1.0.11
 reload@1.1.11
 retry@1.0.9
